@@ -1,46 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Click Speed Game</title>
-<style>
-body {
-  background:#0f0f0f;
-  color:white;
-  font-family:sans-serif;
-  text-align:center;
-  padding-top:100px;
-}
-
-button {
-  padding:20px 40px;
-  font-size:20px;
-  background:#1e90ff;
-  border:none;
-  border-radius:10px;
-  color:white;
-  cursor:pointer;
-}
-
-button:hover {
-  background:#00bfff;
-}
-</style>
+  <meta charset="UTF-8">
+  <title>Click Speed Game</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="container">
+    <h1>Click Speed Game</h1>
+    <p>Haz click tantas veces como puedas en 10 segundos!</p>
 
-<h1>Click Speed Game</h1>
-<p>Clicks: <span id="score">0</span></p>
-<button onclick="addClick()">Click!</button>
+    <button id="clickBtn" class="btn-neon-border">¡Click!</button>
 
-<script>
-let score = 0;
-function addClick(){
-  score++;
-  document.getElementById("score").innerText = score;
-}
-</script>
+    <div class="stats">
+      <p>Clicks: <span id="count">0</span></p>
+      <p>Tiempo restante: <span id="time">10</span> segundos</p>
+    </div>
+  </div>
 
+  <script src="script.js"></script>
 </body>
 </html>
+
 
