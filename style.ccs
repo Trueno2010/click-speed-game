@@ -7,12 +7,13 @@
 
 body {
   font-family: 'Space Grotesk', sans-serif;
-  background-color: #0a0a0a; /* fondo oscuro elegante */
+  background-color: #0a0a0a; /* oscuro elegante */
   color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  overflow: hidden;
 }
 
 /* ===== CONTENEDOR ===== */
@@ -21,10 +22,11 @@ body {
   background: #111;
   padding: 50px 40px;
   border-radius: 20px;
-  box-shadow: 0 0 40px rgba(30,144,255,0.5);
+  box-shadow: 0 0 40px rgba(0, 191, 255, 0.5);
   width: 90%;
   max-width: 500px;
   position: relative;
+  transition: transform 0.3s;
 }
 
 /* ===== TITULOS ===== */
@@ -32,7 +34,7 @@ h1 {
   font-size: 2.8rem;
   margin-bottom: 15px;
   color: #00bfff;
-  text-shadow: 0 0 10px #00bfff;
+  text-shadow: 0 0 15px #00ffff, 0 0 30px #00bfff;
 }
 
 p {
@@ -45,9 +47,9 @@ p {
 .btn-neon {
   position: relative;
   display: inline-block;
-  padding: 15px 40px;
+  padding: 18px 50px;
   color: #00ffff;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 700;
   border: 2px solid #00ffff;
   border-radius: 12px;
@@ -58,10 +60,23 @@ p {
   box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
 }
 
+.btn-neon:hover {
+  color: #fff;
+  box-shadow: 0 0 20px #00ffff, 0 0 40px #00bfff;
+  transform: translateY(-5px) scale(1.1);
+}
+
+.btn-neon:active {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 0 15px #00ffff, 0 0 30px #00bfff, 0 0 50px #00ffff inset;
+}
+
+/* ===== ANIMACIÓN DE BRILLO EN EL BOTÓN ===== */
 .btn-neon::before {
   content: '';
   position: absolute;
-  top: 0; left: -50%;
+  top: 0;
+  left: -50%;
   width: 50%;
   height: 100%;
   background: rgba(255,255,255,0.1);
@@ -71,12 +86,6 @@ p {
 
 .btn-neon:hover::before {
   left: 100%;
-}
-
-.btn-neon:hover {
-  color: #fff;
-  box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
-  transform: translateY(-3px) scale(1.05);
 }
 
 /* ===== STATS ===== */
@@ -101,12 +110,14 @@ p {
   height: 100%;
   background: linear-gradient(90deg, #00ffcc, #00bfff);
   border-radius: 8px;
-  transition: width 0.2s linear;
+  transition: width 0.2s linear, background 0.5s;
 }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 500px) {
   h1 { font-size: 2rem; }
   p { font-size: 1rem; }
-  .btn-neon { padding: 12px 30px; font-size: 1rem; }
+  .btn-neon { padding: 14px 35px; font-size: 1rem; }
+  .game-container { padding: 40px 20px; }
 }
+
